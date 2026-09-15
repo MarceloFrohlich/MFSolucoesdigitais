@@ -6,6 +6,7 @@ import { Send, Mail } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { siteConfig, whatsappLink } from "@/lib/site-config";
+import { track, getOrCreateSessionId } from "@/lib/track";
 
 type Status = "idle" | "sending" | "sent" | "error" | "not_configured";
 
@@ -32,7 +33,7 @@ export default function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, sessionId: getOrCreateSessionId() }),
       });
 
       if (res.status === 503) {
@@ -84,7 +85,13 @@ export default function Contact() {
             className="lg:col-span-2 flex flex-col gap-4"
           >
             {wpLink ? (
-              <a href={wpLink} target="_blank" rel="noopener noreferrer" className="card-outline rounded-2xl flex items-center gap-4 p-5">
+              <a
+                href={wpLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track("whatsapp_click", { location: "contact_card" })}
+                className="card-outline rounded-2xl flex items-center gap-4 p-5"
+              >
                 <div className="w-11 h-11 rounded-xl bg-[#a3e635] border-[1.5px] border-[#16140f] flex items-center justify-center text-[#16140f]">
                   <FaWhatsapp size={20} />
                 </div>
@@ -105,7 +112,11 @@ export default function Contact() {
               </div>
             )}
 
-            <a href={`mailto:${siteConfig.email}`} className="card-outline rounded-2xl flex items-center gap-4 p-5">
+            <a
+              href={`mailto:${siteConfig.email}`}
+              onClick={() => track("email_click", { location: "contact_card" })}
+              className="card-outline rounded-2xl flex items-center gap-4 p-5"
+            >
               <div className="w-11 h-11 rounded-xl bg-[#16140f] flex items-center justify-center text-[#a3e635]">
                 <Mail size={20} />
               </div>

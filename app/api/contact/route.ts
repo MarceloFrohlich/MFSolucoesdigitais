@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { siteConfig } from "@/lib/site-config";
+import { sql } from "@/lib/db";
 
 type ContactPayload = {
   name?: string;
@@ -8,6 +9,7 @@ type ContactPayload = {
   phone?: string;
   service?: string;
   message?: string;
+  sessionId?: string;
 };
 
 function isValidEmail(value: string) {
@@ -27,6 +29,7 @@ export async function POST(request: Request) {
   const phone = (payload.phone ?? "").trim().slice(0, 60);
   const service = (payload.service ?? "").trim().slice(0, 200);
   const message = (payload.message ?? "").trim().slice(0, 5000);
+  const sessionId = (payload.sessionId ?? "").toString().slice(0, 100) || "unknown";
 
   if (!name || !email || !message || !isValidEmail(email)) {
     return NextResponse.json({ error: "invalid_fields" }, { status: 400 });
@@ -63,6 +66,15 @@ export async function POST(request: Request) {
     if (error) {
       console.error("Resend error:", error);
       return NextResponse.json({ error: "send_failed" }, { status: 502 });
+    }
+
+    try {
+      await sql`
+        INSERT INTO events (type, path, session_id, meta)
+        VALUES ('lead', '/', ${sessionId}, ${JSON.stringify({ name, email, phone, service })}::jsonb)
+      `;
+    } catch (err) {
+      console.error("Lead insert failed:", err);
     }
 
     return NextResponse.json({ ok: true });

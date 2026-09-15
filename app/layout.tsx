@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { siteConfig } from "@/lib/site-config";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -31,11 +32,31 @@ export const metadata: Metadata = {
   },
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: siteConfig.brandName,
+  alternateName: "MF Soluções Digitais",
+  url: siteConfig.domain,
+  email: siteConfig.email,
+  ...(siteConfig.whatsappNumber ? { telephone: `+${siteConfig.whatsappNumber}` } : {}),
+  areaServed: "BR",
+  description:
+    "Desenvolvimento de sistemas personalizados, sites institucionais, aplicativos e integrações sob medida para empresas e profissionais.",
+  sameAs: [siteConfig.linkedin, siteConfig.github],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}>
       <body className="antialiased" suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <LanguageProvider>{children}</LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );

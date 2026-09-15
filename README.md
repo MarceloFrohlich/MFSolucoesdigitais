@@ -32,6 +32,29 @@ só não envia.
    basta verificar o domínio no Resend e trocar o `from` em
    `app/api/contact/route.ts`.
 
+## Painel admin e analytics (Postgres)
+
+Existe um painel privado em `/admin/dashboard` com: total de visitas (geral e
+últimos 30 dias), visitantes únicos, leads recebidos pelo formulário, cliques
+em WhatsApp/e-mail, distribuição de acessos por horário do dia e as origens
+(referrers) mais comuns.
+
+- **Banco**: Postgres via integração Neon na Vercel (`vercel integration add neon`).
+  A `DATABASE_URL` é injetada automaticamente nas envs do projeto.
+- **Schema**: uma única tabela `events` (tipo do evento, sessão anônima, path,
+  referrer, utm_source, user-agent, metadata em JSON). Rodar
+  `node --env-file=.env.local scripts/init-db.mjs` cria as tabelas/índices
+  (idempotente, seguro rodar de novo).
+- **Rastreamento**: `components/Analytics.tsx` dispara um evento `pageview` ao
+  carregar a página; `lib/track.ts` é usado nos cliques de WhatsApp/e-mail; o
+  `/api/contact` grava um evento `lead` a cada envio de formulário bem-sucedido.
+  Tudo com um ID de sessão anônimo (`localStorage`), sem cookies de terceiros.
+- **Login**: senha única em `ADMIN_PASSWORD` (env var). Sessão via cookie
+  httpOnly assinado (HMAC com `ADMIN_SESSION_SECRET`), validado em `proxy.ts`
+  antes de qualquer rota `/admin/dashboard/*`.
+- **Localmente**: preencha `ADMIN_PASSWORD` e `ADMIN_SESSION_SECRET` no
+  `.env.local` (veja `.env.example`).
+
 ## Antes de publicar — pendências de conteúdo
 
 Todo o texto é um **rascunho** para revisão. Pontos que precisam de atenção real
@@ -68,3 +91,8 @@ antes de colocar o site no ar:
 - `contexts/LanguageContext.tsx` — troca de idioma client-side com persistência em `localStorage`.
 - `lib/site-config.ts` — dados de contato centralizados.
 - `lib/icon-map.tsx` — mapeia strings de ícone (usadas nas traduções) para componentes lucide-react.
+- `lib/db.ts` / `lib/auth.ts` / `lib/track.ts` — cliente Postgres, sessão do admin e helper de rastreamento client-side.
+- `app/admin/` — login (`/admin/login`) e painel (`/admin/dashboard`).
+- `app/api/track/` e `app/api/admin/` — rota de eventos e rotas de login/logout do admin.
+- `proxy.ts` — protege `/admin/dashboard` (equivalente ao antigo `middleware.ts` no Next 16).
+- `scripts/init-db.mjs` — cria o schema do Postgres (rodar uma vez).
