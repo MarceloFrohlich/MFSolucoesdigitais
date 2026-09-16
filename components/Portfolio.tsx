@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Building2, Smartphone, Sparkles } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -12,7 +12,7 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="relative py-24 px-6 bg-[#eee8d8] border-y-[1.5px] border-[#16140f]/10">
       <div className="max-w-6xl mx-auto">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -30,12 +30,12 @@ export default function Portfolio() {
             </span>
           </h2>
           <p className="text-[#57534a] leading-7">{t.portfolio.description}</p>
-        </motion.div>
+        </m.div>
 
         <p className="text-center text-xs text-[#57534a] italic mb-10">{t.portfolio.note}</p>
 
         {featured && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -78,12 +78,12 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         )}
 
         <div className="grid sm:grid-cols-2 gap-6">
           {rest.map((item, i) => (
-            <motion.div
+            <m.div
               key={item.name}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +103,7 @@ export default function Portfolio() {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

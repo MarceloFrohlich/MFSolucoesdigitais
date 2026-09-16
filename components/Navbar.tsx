@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLanguage, type Lang } from "@/contexts/LanguageContext";
 import { siteConfig } from "@/lib/site-config";
@@ -62,7 +62,7 @@ export default function Navbar() {
   };
 
   return (
-    <motion.header
+    <m.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -71,7 +71,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-18 py-3 flex items-center justify-between gap-4">
-        <motion.button
+        <m.button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           whileHover={{ scale: 1.05 }}
           className="flex items-center gap-2 cursor-pointer group shrink-0"
@@ -82,7 +82,7 @@ export default function Navbar() {
           <span className="hidden sm:block text-sm font-bold text-[#16140f] uppercase tracking-wide">
             {siteConfig.brandTag}
           </span>
-        </motion.button>
+        </m.button>
 
         <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
@@ -94,7 +94,7 @@ export default function Navbar() {
               }`}
             >
               {active === link.href.slice(1) && (
-                <motion.span layoutId="nav-active" className="absolute inset-0 rounded-full bg-[#a3e635]/50 border-[1.5px] border-[#16140f]" />
+                <span className="absolute inset-0 rounded-full bg-[#a3e635]/50 border-[1.5px] border-[#16140f] transition-opacity duration-200" />
               )}
               <span className="relative">{link.label}</span>
             </button>
@@ -114,7 +114,7 @@ export default function Navbar() {
 
             <AnimatePresence>
               {langOpen && (
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, y: -6, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -6, scale: 0.95 }}
@@ -133,7 +133,7 @@ export default function Navbar() {
                       <span className="font-mono">{langMeta[l].label}</span>
                     </button>
                   ))}
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
           </div>
@@ -154,7 +154,7 @@ export default function Navbar() {
 
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -194,9 +194,9 @@ export default function Navbar() {
                 {t.nav.cta}
               </button>
             </nav>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </m.header>
   );
 }

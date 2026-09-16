@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { iconMap } from "@/lib/icon-map";
 
@@ -10,7 +10,7 @@ export default function WhyUs() {
   return (
     <section id="why-us" className="relative py-24 px-6">
       <div className="max-w-5xl mx-auto">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -28,13 +28,13 @@ export default function WhyUs() {
             </span>
           </h2>
           <p className="text-[#57534a] leading-7">{t.whyUs.description}</p>
-        </motion.div>
+        </m.div>
 
         <div className="grid sm:grid-cols-2 gap-5">
           {t.whyUs.points.map((point, i) => {
             const Icon = iconMap[point.icon];
             return (
-              <motion.div
+              <m.div
                 key={point.title}
                 initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -49,7 +49,7 @@ export default function WhyUs() {
                   <h3 className="text-base font-bold text-[#16140f] mb-1">{point.title}</h3>
                   <p className="text-sm text-[#57534a] leading-6">{point.description}</p>
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

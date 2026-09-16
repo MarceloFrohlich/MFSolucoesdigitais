@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -19,7 +19,7 @@ export default function Hero() {
       <PlusDecor />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -27,9 +27,9 @@ export default function Hero() {
         >
           <span className="w-2 h-2 rounded-full bg-[#a3e635] border border-[#16140f]" />
           <span>{t.hero.badge}</span>
-        </motion.div>
+        </m.div>
 
-        <motion.h1
+        <m.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -41,9 +41,9 @@ export default function Hero() {
             <span className="relative z-10">{t.hero.titleLine2}</span>
             <span className="absolute inset-x-0 bottom-1 h-[0.4em] bg-[#a3e635] -z-0 -rotate-1" />
           </span>
-        </motion.h1>
+        </m.h1>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.45 }}
@@ -59,27 +59,27 @@ export default function Hero() {
             className="text-[#16140f] font-semibold"
           />
           <span className="animate-blink-cursor text-[#4d7c0f] ml-0.5">_</span>
-        </motion.div>
+        </m.div>
 
-        <motion.p
+        <m.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.55 }}
           className="text-[#57534a] text-base sm:text-lg max-w-2xl mx-auto leading-7 mb-3"
         >
           {t.hero.subtitle}
-        </motion.p>
+        </m.p>
 
-        <motion.p
+        <m.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.62 }}
           className="text-[#16140f] text-sm font-bold mb-10"
         >
           {t.hero.trust}
-        </motion.p>
+        </m.p>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7 }}
@@ -94,9 +94,9 @@ export default function Hero() {
             {t.hero.ctaSecondary}
             <ArrowDown size={15} />
           </button>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.85 }}
@@ -113,7 +113,7 @@ export default function Hero() {
               <p className="text-xs sm:text-sm text-[#57534a] mt-1 leading-snug">{stat.label}</p>
             </div>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

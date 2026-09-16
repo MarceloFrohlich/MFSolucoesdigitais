@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { iconMap } from "@/lib/icon-map";
 
@@ -10,7 +10,7 @@ export default function Services() {
   return (
     <section id="services" className="relative py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -28,13 +28,13 @@ export default function Services() {
             </span>
           </h2>
           <p className="text-[#57534a] leading-7">{t.services.description}</p>
-        </motion.div>
+        </m.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {t.services.items.map((item, i) => {
             const Icon = iconMap[item.icon];
             return (
-              <motion.div
+              <m.div
                 key={item.title}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export default function Services() {
                 </div>
                 <h3 className="text-lg font-bold text-[#16140f]">{item.title}</h3>
                 <p className="text-sm text-[#57534a] leading-6">{item.description}</p>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

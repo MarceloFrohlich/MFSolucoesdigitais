@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -12,7 +12,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="relative py-24 px-6 bg-[#eee8d8] border-y-[1.5px] border-[#16140f]/10">
       <div className="max-w-3xl mx-auto">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -29,13 +29,13 @@ export default function FAQ() {
               <span className="absolute inset-x-0 bottom-1 h-[0.35em] bg-[#a3e635] -z-0" />
             </span>
           </h2>
-        </motion.div>
+        </m.div>
 
         <div className="flex flex-col gap-3">
           {t.faq.items.map((item, i) => {
             const isOpen = open === i;
             return (
-              <motion.div
+              <m.div
                 key={item.q}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ export default function FAQ() {
                 </button>
                 <AnimatePresence initial={false}>
                   {isOpen && (
-                    <motion.div
+                    <m.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -63,10 +63,10 @@ export default function FAQ() {
                       className="overflow-hidden"
                     >
                       <p className="px-5 pb-4 text-sm text-[#57534a] leading-6">{item.a}</p>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

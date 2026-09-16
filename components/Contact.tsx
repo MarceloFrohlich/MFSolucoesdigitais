@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Send, Mail } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -55,7 +55,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-24 px-6">
       <div className="max-w-5xl mx-auto">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -73,11 +73,11 @@ export default function Contact() {
             </span>
           </h2>
           <p className="text-[#57534a] leading-7">{t.contact.description}</p>
-        </motion.div>
+        </m.div>
 
         <div className="grid lg:grid-cols-5 gap-8">
           {/* Direct contact cards */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -127,10 +127,10 @@ export default function Contact() {
             </a>
 
             <p className="text-xs text-[#57534a] px-1">{t.contact.direct.response}</p>
-          </motion.div>
+          </m.div>
 
           {/* Form */}
-          <motion.form
+          <m.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -229,7 +229,7 @@ export default function Contact() {
             {status === "not_configured" && (
               <p className="text-sm text-red-600 font-semibold text-center">{t.contact.form.notConfigured}</p>
             )}
-          </motion.form>
+          </m.form>
         </div>
       </div>
     </section>

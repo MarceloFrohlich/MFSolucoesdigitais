@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { siteConfig } from "@/lib/site-config";
 import Analytics from "@/components/Analytics";
+import MotionProvider from "@/components/MotionProvider";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -55,7 +56,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <LanguageProvider>{children}</LanguageProvider>
+        <MotionProvider>
+          <LanguageProvider>{children}</LanguageProvider>
+        </MotionProvider>
         <Analytics />
       </body>
     </html>
