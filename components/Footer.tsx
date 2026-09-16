@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { siteConfig } from "@/lib/site-config";
 
@@ -16,9 +17,14 @@ export default function Footer() {
           </span>
           <p className="text-sm text-[#c9c6ba] mt-2">{t.footer.tagline}</p>
         </div>
-        <p className="text-xs text-[#8a877c]">
-          © {year} {siteConfig.brandName}. {t.footer.rights}
-        </p>
+        <div className="flex flex-col sm:items-end gap-2">
+          <Link href="/politica-de-privacidade" className="text-xs text-[#c9c6ba] hover:text-[#a3e635] transition-colors underline">
+            Política de Privacidade
+          </Link>
+          <p className="text-xs text-[#8a877c]">
+            © {year} {siteConfig.brandName}. {t.footer.rights}
+          </p>
+        </div>
       </div>
     </footer>
   );
