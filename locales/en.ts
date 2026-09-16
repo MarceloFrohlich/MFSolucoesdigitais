@@ -4,7 +4,7 @@ export const en: Translations = {
   nav: {
     services: "Services",
     how: "How It Works",
-    why: "Why Me",
+    why: "Advantages",
     portfolio: "Projects",
     faq: "FAQ",
     contact: "Contact",
@@ -31,15 +31,15 @@ export const en: Translations = {
       { value: "3+", label: "years of experience" },
       { value: "15+", label: "technologies day to day" },
       { value: "3", label: "languages supported" },
-      { value: "100%", label: "remote and direct with the developer" },
+      { value: "100%", label: "remote and no middlemen" },
     ],
   },
   services: {
     sectionLabel: "01. services",
-    heading: "What I",
-    headingAccent: "build",
+    heading: "What",
+    headingAccent: "you get",
     description:
-      "Every project starts with a business problem, not a list of technologies. The solution is designed around what your business actually needs.",
+      "Every project starts with your business's problem, not a list of technologies. The solution is designed around what you need to solve.",
     items: [
       {
         icon: "layout-dashboard",
@@ -69,13 +69,13 @@ export const en: Translations = {
         icon: "plug-zap",
         title: "System & API Integrations",
         description:
-          "Connecting systems that currently don't talk to each other: ERPs, spreadsheets, payment platforms, CRMs and third-party APIs.",
+          "Systems that currently don't talk to each other — ERPs, spreadsheets, payment platforms, CRMs, third-party APIs — start exchanging information automatically.",
       },
       {
         icon: "puzzle",
         title: "Custom Digital Solutions",
         description:
-          "When the problem doesn't fit any category above, I design a solution specific to your need.",
+          "When the problem doesn't fit any category above, your business gets a solution designed specifically for your need.",
       },
     ],
   },
@@ -83,7 +83,7 @@ export const en: Translations = {
     sectionLabel: "02. how it works",
     heading: "From problem",
     headingAccent: "to solution",
-    description: "A simple, transparent process, designed for non-technical clients.",
+    description: "A simple, transparent process — you don't need to understand technology to take part.",
     steps: [
       {
         title: "Diagnosis",
@@ -99,20 +99,20 @@ export const en: Translations = {
       },
       {
         title: "Delivery & Support",
-        description: "Deployment, usage training when needed, and ongoing support after delivery.",
+        description: "You get deployment, training when needed, and ongoing support after delivery.",
       },
     ],
   },
   whyUs: {
-    sectionLabel: "03. why me",
-    heading: "I don't sell",
+    sectionLabel: "03. advantages",
+    heading: "Your business doesn't need",
     headingAccent: "programming",
-    description: "I sell problem-solving. Technology is the means, not the end.",
+    description: "It needs a solution that solves the problem — the code is just the means.",
     points: [
       {
         icon: "message-circle",
         title: "Direct contact, no middlemen",
-        description: "You talk to me, the person building it — not a sales team or an account manager.",
+        description: "You talk directly to whoever is delivering the project — no passing your problem to a sales team or an account manager.",
       },
       {
         icon: "target",
@@ -132,16 +132,16 @@ export const en: Translations = {
       {
         icon: "life-buoy",
         title: "You're not left on your own afterward",
-        description: "The project doesn't end at delivery: I follow up on adjustments, questions and evolution after it goes live.",
+        description: "After the system goes live, you keep getting support for adjustments, questions and evolution.",
       },
     ],
   },
   portfolio: {
     sectionLabel: "04. projects",
-    heading: "Technical",
-    headingAccent: "capability",
+    heading: "The standard",
+    headingAccent: "you can expect",
     description:
-      "A sample of systems I've built — from full APIs to mobile apps — as a reference for quality and scope.",
+      "A sample of systems already delivered — from full APIs to mobile apps — so you can see the level of quality and scope to expect on your project.",
     note: "Real and portfolio projects, used here as a reference for quality and scope.",
     featuredWebLabel: "Web Dashboard",
     featuredAppLabel: "Mobile App",
@@ -199,11 +199,11 @@ export const en: Translations = {
       },
       {
         q: "Do I need to understand technology to hire you?",
-        a: "No. The initial conversation is about your process and the problem you want to solve — translating that into a technical solution is my job.",
+        a: "No. The initial conversation is about your process and the problem you want to solve — turning that into a technical solution is the next step.",
       },
       {
         q: "Do you offer support after the project is delivered?",
-        a: "Yes. I follow up on adjustments, usage questions and system evolution after delivery, either on a one-off basis or an ongoing support plan.",
+        a: "Yes. You get support for adjustments, usage questions and system evolution after delivery, either one-off or on an ongoing plan.",
       },
       {
         q: "Do you work with companies from other states or countries?",
@@ -211,7 +211,7 @@ export const en: Translations = {
       },
       {
         q: "What technologies do you use?",
-        a: "I mainly work with React, Next.js, NestJS, Node.js, TypeScript, PHP/Laravel and databases like MySQL, MongoDB and Oracle — always choosing the stack that best fits the project.",
+        a: "The project runs on React, Next.js, NestJS, Node.js, TypeScript, PHP/Laravel and databases like MySQL, MongoDB and Oracle — always the stack that best fits your business's need.",
       },
     ],
   },
@@ -219,7 +219,7 @@ export const en: Translations = {
     sectionLabel: "06. contact",
     heading: "Let's talk about",
     headingAccent: "your project",
-    description: "Tell me a bit about the problem you want to solve. I personally reply to every message.",
+    description: "Tell me a bit about the problem you want to solve — every message gets a personal reply.",
     form: {
       name: "Name",
       email: "Email",
@@ -239,7 +239,7 @@ export const en: Translations = {
       whatsapp: "WhatsApp",
       whatsappNotConfigured: "coming soon",
       email: "Email",
-      response: "I usually reply within 24 hours.",
+      response: "You get a reply within 24 hours.",
     },
   },
   footer: {

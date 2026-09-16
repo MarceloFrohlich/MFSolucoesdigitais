@@ -4,7 +4,7 @@ export const es: Translations = {
   nav: {
     services: "Servicios",
     how: "Cómo Funciona",
-    why: "Por Qué Yo",
+    why: "Diferenciales",
     portfolio: "Proyectos",
     faq: "Preguntas",
     contact: "Contacto",
@@ -31,15 +31,15 @@ export const es: Translations = {
       { value: "3+", label: "años de experiencia" },
       { value: "15+", label: "tecnologías en el día a día" },
       { value: "3", label: "idiomas de atención" },
-      { value: "100%", label: "remoto y directo con quien desarrolla" },
+      { value: "100%", label: "remoto y sin intermediarios" },
     ],
   },
   services: {
     sectionLabel: "01. servicios",
     heading: "Lo que",
-    headingAccent: "desarrollo",
+    headingAccent: "tú recibes",
     description:
-      "Cada proyecto comienza con un problema de negocio, no con una lista de tecnologías. La solución se diseña en torno a lo que tu empresa realmente necesita.",
+      "Cada proyecto comienza con el problema de tu negocio, no con una lista de tecnologías. La solución se diseña en torno a lo que necesitas resolver.",
     items: [
       {
         icon: "layout-dashboard",
@@ -69,13 +69,13 @@ export const es: Translations = {
         icon: "plug-zap",
         title: "Integración entre Sistemas y APIs",
         description:
-          "Conecto sistemas que hoy no se comunican entre sí: ERPs, hojas de cálculo, plataformas de pago, CRMs y APIs de terceros.",
+          "Sistemas que hoy no se comunican entre sí — ERPs, hojas de cálculo, plataformas de pago, CRMs, APIs de terceros — empiezan a intercambiar información automáticamente.",
       },
       {
         icon: "puzzle",
         title: "Soluciones Digitales a Medida",
         description:
-          "Cuando el problema no encaja en ninguna categoría anterior, diseño una solución específica para tu necesidad.",
+          "Cuando el problema no encaja en ninguna categoría anterior, tu empresa recibe una solución diseñada específicamente para tu necesidad.",
       },
     ],
   },
@@ -83,7 +83,7 @@ export const es: Translations = {
     sectionLabel: "02. cómo funciona",
     heading: "Del problema",
     headingAccent: "a la solución",
-    description: "Un proceso simple y transparente, pensado para quienes no son del área técnica.",
+    description: "Un proceso simple y transparente — no necesitas entender de tecnología para participar.",
     steps: [
       {
         title: "Diagnóstico",
@@ -102,20 +102,20 @@ export const es: Translations = {
       },
       {
         title: "Entrega y Soporte",
-        description: "Implementación, capacitación de uso cuando sea necesario, y soporte continuo tras la entrega.",
+        description: "Recibes la implementación, capacitación cuando sea necesaria, y soporte continuo tras la entrega.",
       },
     ],
   },
   whyUs: {
-    sectionLabel: "03. por qué yo",
-    heading: "No vendo",
+    sectionLabel: "03. diferenciales",
+    heading: "Tu empresa no necesita",
     headingAccent: "programación",
-    description: "Vendo solución de problemas. La tecnología es el medio, no el fin.",
+    description: "Necesita una solución que resuelva el problema — el código es solo el medio.",
     points: [
       {
         icon: "message-circle",
         title: "Contacto directo, sin intermediarios",
-        description: "Hablas conmigo, la persona que desarrolla, no con un equipo de ventas o un gerente de cuentas.",
+        description: "Hablas directamente con quien entrega el proyecto — sin pasar tu problema a un equipo de ventas o un gerente de cuentas.",
       },
       {
         icon: "target",
@@ -135,16 +135,16 @@ export const es: Translations = {
       {
         icon: "life-buoy",
         title: "No te quedas solo después",
-        description: "El proyecto no termina en la entrega: acompaño ajustes, dudas y evolución del sistema después de que sale al aire.",
+        description: "Después de que el sistema sale al aire, sigues teniendo soporte para ajustes, dudas y evolución.",
       },
     ],
   },
   portfolio: {
     sectionLabel: "04. proyectos",
-    heading: "Capacidad",
-    headingAccent: "técnica",
+    heading: "El nivel que",
+    headingAccent: "puedes esperar",
     description:
-      "Una muestra de sistemas que ya he desarrollado — de APIs completas a aplicaciones móviles — como referencia de calidad y alcance.",
+      "Una muestra de sistemas ya entregados — de APIs completas a aplicaciones móviles — para que veas el nivel de calidad y alcance que puedes esperar en tu proyecto.",
     note: "Proyectos reales y de portafolio, usados aquí como referencia de calidad y alcance.",
     featuredWebLabel: "Panel Web",
     featuredAppLabel: "App Móvil",
@@ -202,11 +202,11 @@ export const es: Translations = {
       },
       {
         q: "¿Necesito entender de tecnología para contratar?",
-        a: "No. La conversación inicial es sobre tu proceso y el problema que quieres resolver — traducir eso en una solución técnica es mi trabajo.",
+        a: "No. La conversación inicial es sobre tu proceso y el problema que quieres resolver — traducir eso en una solución técnica es el siguiente paso.",
       },
       {
         q: "¿Ofrecen soporte después de la entrega del proyecto?",
-        a: "Sí. Acompaño ajustes, dudas de uso y evolución del sistema después de la entrega, ya sea de forma puntual o en un plan de soporte continuo.",
+        a: "Sí. Tienes soporte para ajustes, dudas de uso y evolución del sistema después de la entrega, ya sea puntual o en un plan continuo.",
       },
       {
         q: "¿Atienden empresas de otros estados o países?",
@@ -214,7 +214,7 @@ export const es: Translations = {
       },
       {
         q: "¿Qué tecnologías utilizan?",
-        a: "Trabajo principalmente con React, Next.js, NestJS, Node.js, TypeScript, PHP/Laravel y bases de datos como MySQL, MongoDB y Oracle — siempre eligiendo la stack más adecuada para el proyecto.",
+        a: "El proyecto usa React, Next.js, NestJS, Node.js, TypeScript, PHP/Laravel y bases de datos como MySQL, MongoDB y Oracle — siempre la stack más adecuada para la necesidad de tu negocio.",
       },
     ],
   },
@@ -222,7 +222,7 @@ export const es: Translations = {
     sectionLabel: "06. contacto",
     heading: "Hablemos sobre",
     headingAccent: "tu proyecto",
-    description: "Cuéntame un poco sobre el problema que quieres resolver. Respondo personalmente cada mensaje.",
+    description: "Cuéntame un poco sobre el problema que quieres resolver — cada mensaje recibe una respuesta personal.",
     form: {
       name: "Nombre",
       email: "Correo electrónico",
@@ -242,7 +242,7 @@ export const es: Translations = {
       whatsapp: "WhatsApp",
       whatsappNotConfigured: "próximamente",
       email: "Correo",
-      response: "Normalmente respondo en un plazo de 24 horas.",
+      response: "Recibes respuesta en un plazo de 24 horas.",
     },
   },
   footer: {
