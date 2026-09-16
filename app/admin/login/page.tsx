@@ -55,6 +55,7 @@ export default function AdminLoginPage() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Senha"
+          aria-label="Senha"
           className="w-full rounded-lg border-[1.5px] border-[#16140f]/30 bg-[#f5f1e6] px-3.5 py-2.5 text-sm text-[#16140f] outline-none focus:border-[#16140f] transition-colors mb-4"
         />
 

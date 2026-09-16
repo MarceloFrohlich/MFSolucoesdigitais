@@ -32,7 +32,7 @@ export default function Portfolio() {
           <p className="text-[#57534a] leading-7">{t.portfolio.description}</p>
         </motion.div>
 
-        <p className="text-center text-xs text-[#57534a]/80 italic mb-10">{t.portfolio.note}</p>
+        <p className="text-center text-xs text-[#57534a] italic mb-10">{t.portfolio.note}</p>
 
         {featured && (
           <motion.div

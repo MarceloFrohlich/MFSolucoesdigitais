@@ -140,8 +140,11 @@ export default function Contact() {
           >
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-bold text-[#57534a] uppercase tracking-wide">{t.contact.form.name}</label>
+                <label htmlFor="contact-name" className="text-xs font-bold text-[#57534a] uppercase tracking-wide">
+                  {t.contact.form.name}
+                </label>
                 <input
+                  id="contact-name"
                   required
                   type="text"
                   value={form.name}
@@ -150,8 +153,11 @@ export default function Contact() {
                 />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-bold text-[#57534a] uppercase tracking-wide">{t.contact.form.email}</label>
+                <label htmlFor="contact-email" className="text-xs font-bold text-[#57534a] uppercase tracking-wide">
+                  {t.contact.form.email}
+                </label>
                 <input
+                  id="contact-email"
                   required
                   type="email"
                   value={form.email}
@@ -163,8 +169,11 @@ export default function Contact() {
 
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-bold text-[#57534a] uppercase tracking-wide">{t.contact.form.phone}</label>
+                <label htmlFor="contact-phone" className="text-xs font-bold text-[#57534a] uppercase tracking-wide">
+                  {t.contact.form.phone}
+                </label>
                 <input
+                  id="contact-phone"
                   type="tel"
                   value={form.phone}
                   onChange={update("phone")}
@@ -172,8 +181,11 @@ export default function Contact() {
                 />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-bold text-[#57534a] uppercase tracking-wide">{t.contact.form.service}</label>
+                <label htmlFor="contact-service" className="text-xs font-bold text-[#57534a] uppercase tracking-wide">
+                  {t.contact.form.service}
+                </label>
                 <select
+                  id="contact-service"
                   value={form.service}
                   onChange={update("service")}
                   className="rounded-lg border-[1.5px] border-[#16140f]/30 bg-[#f5f1e6] px-3.5 py-2.5 text-sm text-[#16140f] outline-none focus:border-[#16140f] transition-colors"
@@ -189,8 +201,11 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-bold text-[#57534a] uppercase tracking-wide">{t.contact.form.message}</label>
+              <label htmlFor="contact-message" className="text-xs font-bold text-[#57534a] uppercase tracking-wide">
+                {t.contact.form.message}
+              </label>
               <textarea
+                id="contact-message"
                 required
                 rows={4}
                 value={form.message}
