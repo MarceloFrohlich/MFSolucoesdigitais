@@ -23,7 +23,7 @@ export const es: Translations = {
       "Soluciones a medida",
     ],
     subtitle:
-      "Desarrollo sistemas, sitios web, aplicaciones e integraciones a medida para empresas y profesionales que necesitan más que código: necesitan una solución a un problema real de negocio.",
+      "Tu empresa recibe un sistema, sitio, aplicación o integración a medida, pensado para resolver un problema real — no solo para entregar código.",
     ctaPrimary: "Solicitar Presupuesto",
     ctaSecondary: "Ver Servicios",
     trust: "Comunicación directa, sin intermediarios — desde el diagnóstico hasta la entrega.",
@@ -120,22 +120,22 @@ export const es: Translations = {
       {
         icon: "target",
         title: "Foco en el problema de negocio",
-        description: "Antes de proponer una tecnología, entiendo el proceso que quieres mejorar o automatizar.",
+        description: "El sistema se diseña en torno a lo que necesitas resolver, no a la tecnología de moda del momento.",
       },
       {
         icon: "ruler",
         title: "Soluciones a medida",
-        description: "Nada de plantillas genéricas: cada sistema se diseña para la realidad de tu operación.",
+        description: "Nada de plantillas genéricas: el sistema se diseña para la realidad de tu operación, no para cualquier empresa.",
       },
       {
         icon: "shield-check",
-        title: "Tecnología moderna y segura",
-        description: "Stack actualizada, buenas prácticas de seguridad y código pensado para durar y escalar.",
+        title: "Seguridad que protege tu negocio",
+        description: "Tu sistema funciona con una stack actualizada y segura, sin vulnerabilidades que pongan en riesgo tus datos y los de tus clientes.",
       },
       {
         icon: "life-buoy",
-        title: "Soporte después de la entrega",
-        description: "El proyecto no termina en la entrega. Acompaño ajustes, dudas y evolución del sistema.",
+        title: "No te quedas solo después",
+        description: "El proyecto no termina en la entrega: acompaño ajustes, dudas y evolución del sistema después de que sale al aire.",
       },
     ],
   },

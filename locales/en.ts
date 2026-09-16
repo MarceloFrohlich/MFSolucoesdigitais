@@ -23,7 +23,7 @@ export const en: Translations = {
       "Custom solutions",
     ],
     subtitle:
-      "I build custom systems, websites, apps and integrations for companies and professionals who need more than code — they need a solution to an actual business problem.",
+      "Your business gets a custom-built system, website, app or integration — designed to solve a real problem, not just deliver code.",
     ctaPrimary: "Get a Quote",
     ctaSecondary: "View Services",
     trust: "Direct communication, no middlemen — from diagnosis to delivery.",
@@ -117,22 +117,22 @@ export const en: Translations = {
       {
         icon: "target",
         title: "Focus on the business problem",
-        description: "Before proposing a technology, I understand the process you want to improve or automate.",
+        description: "The system is designed around what you need to solve — not whatever technology happens to be trendy.",
       },
       {
         icon: "ruler",
         title: "Custom-built solutions",
-        description: "No generic templates: every system is designed for the reality of your operation.",
+        description: "No generic templates: the system is designed for the reality of your operation, not just any business.",
       },
       {
         icon: "shield-check",
-        title: "Modern, secure technology",
-        description: "Up-to-date stack, security best practices, and code built to last and scale.",
+        title: "Security that protects your business",
+        description: "Your system runs on an up-to-date, secure stack — no vulnerabilities putting your data, or your customers', at risk.",
       },
       {
         icon: "life-buoy",
-        title: "Support after delivery",
-        description: "The project doesn't end at delivery. I follow up on adjustments, questions and evolution.",
+        title: "You're not left on your own afterward",
+        description: "The project doesn't end at delivery: I follow up on adjustments, questions and evolution after it goes live.",
       },
     ],
   },

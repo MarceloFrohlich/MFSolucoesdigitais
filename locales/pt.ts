@@ -112,7 +112,7 @@ export const pt: Translations = {
       "Soluções sob medida",
     ],
     subtitle:
-      "Desenvolvo sistemas, sites, aplicativos e integrações sob medida para empresas e profissionais que precisam de mais do que código — precisam de uma solução que resolve um problema de negócio.",
+      "Sua empresa ganha uma solução sob medida — sistema, site, aplicativo ou integração — pensada para resolver um problema real, não apenas entregar código.",
     ctaPrimary: "Solicitar Orçamento",
     ctaSecondary: "Ver Serviços",
     trust: "Atendimento direto, sem intermediários — do diagnóstico à entrega.",
@@ -210,22 +210,22 @@ export const pt: Translations = {
       {
         icon: "target",
         title: "Foco no problema de negócio",
-        description: "Antes de propor uma tecnologia, entendo o processo que você quer melhorar ou automatizar.",
+        description: "O sistema é desenhado em torno do que você precisa resolver — não da tecnologia mais na moda no momento.",
       },
       {
         icon: "ruler",
         title: "Soluções sob medida",
-        description: "Nada de templates genéricos: cada sistema é desenhado para a realidade da sua operação.",
+        description: "Nada de templates genéricos: o sistema é desenhado para a realidade da sua operação, não para uma empresa qualquer.",
       },
       {
         icon: "shield-check",
-        title: "Tecnologia moderna e segura",
-        description: "Stack atualizada, boas práticas de segurança e código pensado para durar e escalar.",
+        title: "Segurança que protege seu negócio",
+        description: "Seu sistema roda em uma stack atualizada e segura, sem vulnerabilidades que colocam seus dados — e os dos seus clientes — em risco.",
       },
       {
         icon: "life-buoy",
-        title: "Suporte após a entrega",
-        description: "O projeto não termina na entrega. Acompanho ajustes, dúvidas e evolução do sistema.",
+        title: "Você não fica na mão depois",
+        description: "O projeto não termina na entrega: acompanho ajustes, dúvidas e evolução do sistema depois que ele vai ao ar.",
       },
     ],
   },
