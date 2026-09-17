@@ -153,16 +153,19 @@ export default async function AdminDashboardPage() {
               )}
               .
             </p>
-            <div className="flex items-end gap-1 h-32">
+            <div className="flex items-end gap-1 h-32 mt-10">
               {Array.from({ length: 24 }, (_, hour) => {
                 const count = hourMap.get(hour) ?? 0;
                 const heightPct = Math.max(2, (count / maxHourCount) * 100);
                 return (
                   <div key={hour} className="flex-1 h-full flex flex-col justify-end items-center gap-1 group relative">
+                    <div className="absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-[#16140f] text-[#f5f1e6] text-[11px] font-bold px-2.5 py-1.5 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none z-10">
+                      {String(hour).padStart(2, "0")}h — {count} {count === 1 ? "visita" : "visitas"}
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#16140f]" />
+                    </div>
                     <div
                       className="w-full rounded-sm bg-[#16140f] group-hover:bg-[#a3e635] transition-colors"
                       style={{ height: `${heightPct}%` }}
-                      title={`${hour}h — ${count} visita(s)`}
                     />
                   </div>
                 );
