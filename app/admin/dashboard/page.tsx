@@ -158,7 +158,7 @@ export default async function AdminDashboardPage() {
                 const count = hourMap.get(hour) ?? 0;
                 const heightPct = Math.max(2, (count / maxHourCount) * 100);
                 return (
-                  <div key={hour} className="flex-1 flex flex-col items-center gap-1 group relative">
+                  <div key={hour} className="flex-1 h-full flex flex-col justify-end items-center gap-1 group relative">
                     <div
                       className="w-full rounded-sm bg-[#16140f] group-hover:bg-[#a3e635] transition-colors"
                       style={{ height: `${heightPct}%` }}
