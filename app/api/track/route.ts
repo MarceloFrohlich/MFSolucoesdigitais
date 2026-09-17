@@ -8,6 +8,8 @@ type TrackPayload = {
   path?: string;
   referrer?: string;
   utmSource?: string;
+  fbclid?: string;
+  gclid?: string;
   sessionId?: string;
   meta?: Record<string, unknown>;
 };
@@ -33,13 +35,15 @@ export async function POST(request: Request) {
   const path = (payload.path ?? "").toString().slice(0, 300);
   const referrer = (payload.referrer ?? "").toString().slice(0, 500);
   const utmSource = (payload.utmSource ?? "").toString().slice(0, 100) || null;
+  const fbclid = (payload.fbclid ?? "").toString().slice(0, 300) || null;
+  const gclid = (payload.gclid ?? "").toString().slice(0, 300) || null;
   const userAgent = (request.headers.get("user-agent") ?? "").slice(0, 500);
   const meta = payload.meta ?? null;
 
   try {
     await sql`
-      INSERT INTO events (type, path, referrer, utm_source, session_id, user_agent, meta)
-      VALUES (${type}, ${path}, ${referrer}, ${utmSource}, ${sessionId}, ${userAgent}, ${JSON.stringify(meta)}::jsonb)
+      INSERT INTO events (type, path, referrer, utm_source, fbclid, gclid, session_id, user_agent, meta)
+      VALUES (${type}, ${path}, ${referrer}, ${utmSource}, ${fbclid}, ${gclid}, ${sessionId}, ${userAgent}, ${JSON.stringify(meta)}::jsonb)
     `;
   } catch (err) {
     console.error("Track insert failed:", err);

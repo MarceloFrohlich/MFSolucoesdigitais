@@ -22,6 +22,9 @@ export function track(type: string, meta?: Record<string, unknown>) {
       path: window.location.pathname,
       referrer: document.referrer || "",
       utmSource: params.get("utm_source") || undefined,
+      // Click IDs ad platforms append to the URL: fbclid (Meta), gclid (Google Ads).
+      fbclid: params.get("fbclid") || undefined,
+      gclid: params.get("gclid") || undefined,
       sessionId: getOrCreateSessionId(),
       meta,
     });

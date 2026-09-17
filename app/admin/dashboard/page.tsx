@@ -1,4 +1,5 @@
 import { Eye, Users, MessageSquareText, Mail, TrendingUp } from "lucide-react";
+import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { sql } from "@/lib/db";
 import LogoutButton from "@/components/admin/LogoutButton";
 
@@ -11,6 +12,8 @@ type Totals = {
   leads: number;
   whatsapp_clicks: number;
   email_clicks: number;
+  meta_clicks: number;
+  google_clicks: number;
 };
 
 type HourRow = { hour: number; count: number };
@@ -41,7 +44,9 @@ export default async function AdminDashboardPage() {
         count(DISTINCT session_id) FILTER (WHERE type = 'pageview')::int AS unique_visitors,
         count(*) FILTER (WHERE type = 'lead')::int AS leads,
         count(*) FILTER (WHERE type = 'whatsapp_click')::int AS whatsapp_clicks,
-        count(*) FILTER (WHERE type = 'email_click')::int AS email_clicks
+        count(*) FILTER (WHERE type = 'email_click')::int AS email_clicks,
+        count(*) FILTER (WHERE type = 'pageview' AND fbclid IS NOT NULL)::int AS meta_clicks,
+        count(*) FILTER (WHERE type = 'pageview' AND gclid IS NOT NULL)::int AS google_clicks
       FROM events
     `,
     sql`
@@ -75,6 +80,8 @@ export default async function AdminDashboardPage() {
     leads: 0,
     whatsapp_clicks: 0,
     email_clicks: 0,
+    meta_clicks: 0,
+    google_clicks: 0,
   }) as Totals;
 
   const hourMap = new Map((hourly as HourRow[]).map((r) => [r.hour, r.count]));
@@ -102,6 +109,36 @@ export default async function AdminDashboardPage() {
           <StatCard icon={MessageSquareText} value={totals.leads} label="Formulários enviados" />
           <StatCard icon={MessageSquareText} value={totals.whatsapp_clicks} label="Cliques no WhatsApp" />
           <StatCard icon={Mail} value={totals.email_clicks} label="Cliques no e-mail" />
+        </div>
+
+        <div className="card-outline rounded-2xl bg-[#fbf9f2] p-6 mb-10">
+          <h2 className="text-sm font-bold text-[#16140f] uppercase tracking-wide mb-1">
+            Cliques vindos de campanhas
+          </h2>
+          <p className="text-xs text-[#57534a] mb-5">
+            Visitas com identificador de clique do Meta (fbclid) ou do Google Ads (gclid) na URL — sinal de
+            tráfego pago ou de posts/anúncios, mesmo antes de instalar o pixel de conversão.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="flex items-center gap-3 rounded-xl border-[1.5px] border-[#16140f]/15 p-4">
+              <div className="w-10 h-10 rounded-lg bg-[#a3e635] border-[1.5px] border-[#16140f] flex items-center justify-center text-[#16140f] shrink-0">
+                <FaFacebook size={18} />
+              </div>
+              <div>
+                <p className="text-xl font-extrabold text-[#16140f]">{totals.meta_clicks}</p>
+                <p className="text-xs text-[#57534a]">Meta (Facebook/Instagram)</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 rounded-xl border-[1.5px] border-[#16140f]/15 p-4">
+              <div className="w-10 h-10 rounded-lg bg-[#a3e635] border-[1.5px] border-[#16140f] flex items-center justify-center text-[#16140f] shrink-0">
+                <FaGoogle size={18} />
+              </div>
+              <div>
+                <p className="text-xl font-extrabold text-[#16140f]">{totals.google_clicks}</p>
+                <p className="text-xs text-[#57534a]">Google Ads</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-6 mb-10">
